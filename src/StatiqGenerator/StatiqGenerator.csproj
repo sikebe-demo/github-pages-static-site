@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Statiq.App" Version="1.0.0-beta.66" />
+    <PackageReference Include="Statiq.App" Version="1.0.0-beta.69" />
     <PackageReference Include="Statiq.Markdown" Version="1.0.0-beta.66" />
     <PackageReference Include="Statiq.Razor" Version="1.0.0-beta.66" />
   </ItemGroup>
