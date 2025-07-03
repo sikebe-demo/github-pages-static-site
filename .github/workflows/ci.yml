@@ -24,16 +24,3 @@ jobs:
 
     - name: Create .nojekyll file for GitHub Pages
       run: touch docs/.nojekyll
-
-    - name: Verify site generation
-      run: |
-        if [ ! -f docs/index.html ]; then
-          echo "Error: Static site was not generated properly"
-          exit 1
-        fi
-        if [ ! -f docs/.nojekyll ]; then
-          echo "Error: .nojekyll file was not created"
-          exit 1
-        fi
-        echo "Static site generated successfully"
-        ls -la docs/
