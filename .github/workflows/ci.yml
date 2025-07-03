@@ -24,6 +24,3 @@ jobs:
 
     - name: Generate static site
       run: dotnet run --project src/StatiqGenerator --no-build
-
-    - name: Create .nojekyll file for GitHub Pages
-      run: touch docs/.nojekyll
