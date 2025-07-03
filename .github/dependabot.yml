@@ -6,6 +6,12 @@ updates:
     interval: daily
   reviewers:
   - SIkebe
+- package-ecosystem: dotnet-sdk
+  directory: "/"
+  schedule:
+    interval: daily
+  reviewers:
+  - SIkebe
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
