@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        global-json-file: global.json
+
+    - name: Build
+      run: dotnet build
+
+    - name: Generate static site
+      run: dotnet run --project src/StatiqGenerator --no-build
+
+    - name: Verify site generation
+      run: |
+        if [ ! -f docs/index.html ]; then
+          echo "Error: Static site was not generated properly"
+          exit 1
+        fi
+        echo "Static site generated successfully"
+        ls -la docs/
