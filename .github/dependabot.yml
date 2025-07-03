@@ -6,6 +6,9 @@ updates:
     interval: daily
   reviewers:
   - SIkebe
+  # This will monitor both NuGet packages AND .NET SDK version in global.json
+  allow:
+    - dependency-type: "all"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
